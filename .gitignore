@@ -1,0 +1,9 @@
+*.Po
+*.Tpo
+*.lo
+*~
+*.o
+.dirstamp
+.deps
+.libs
+libims.la

@@ -1,0 +1,15 @@
+rm -f confdefs.h config.log config.status config.sub config.guess
+rm -f src/*.o src/*.so
+rm -f src/libims.so*
+make -k -C ./src/imslib/ clean
+rm -f inst/doc/*.cpp inst/doc/*.hpp inst/doc/*.R 
+rm -f inst/doc/*.Rd inst/doc/*.aux inst/doc/*.log inst/doc/*.tex inst/doc/*.out
+rm -rf inst/doc/auto
+rm -rf autom4te.cache
+rm -rf aclocal.m4
+find . -name \*~ -exec rm {} \;
+find . -name \*.flc -exec rm {} \;
+rm -f inst/doc/Rdisop.out
+
+# Windows related stuff
+rm -f src/*.dll src/Makedeps src/*_res.*

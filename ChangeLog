@@ -1,0 +1,155 @@
+2012-10-26  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* /inst/doc -> /vignettes: to please lates R devel
+	* src/ims/distributionprobabilityscorer.cpp: remove stdout messages
+
+2012-10-26  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* src/disop.cpp (decomposeIsotopes): Add support for element count filtering
+
+2012-04-21  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/elements.R (initializeCharges): Fixed electron mass
+
+2012-03-28  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Added citations in package and documentation
+
+2012-03-26  Steffen Neumann  <sneumann@ipb-halle.de>
+	* src/disop.cpp: fixed missing UNPROTECT(), avoids warning
+	and possibly memory corruprtion and crashes
+
+2012-03-11  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Reverted Windows build hack
+
+2012-03-10  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Windows build hack
+
+2012-03-06  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Windows build fixes, removed old configure.in
+
+2012-02-23  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Moved from the ancient embedded Rcpp to RcppClassic,
+  	  thanks to the work of Dirk Eddelbuettel who did the porting
+
+2010-11-04  Steffen Neumann  <sneumann@ipb-halle.de>
+	* Corrected bug that leads to wrong monoisotopic masses for molecules
+	  containing elements where the most abundant isotope is not the first one,
+	  discovered by Ralf Tautenhahn
+
+2010-10-22  Steffen Neumann  <sneumann@ipb-halle.de>
+	* R/elements.R: Added remaining elements to PSE,
+	  contributed by Canteri Roberto (http://m2b2.fbk.eu/en/people)
+
+2010-05-18  Steffen Neumann  <sneumann@ipb-halle.de>
+	* added Runit test infrastructure
+
+2010-04-02  Steffen Neumann	<sneumann@ipb-halle.de>
+	* added Selenium to list of elements
+	* added Cobalt to list of elements
+	* fixed Selenium abundances and masses
+
+2010-02-08  Steffen Neumann	<sneumann@ipb-halle.de>
+	* added parameter maxisotopes to getMolecule() and decompose*()
+
+2008-09-02  ckuhl	<ckuhl@ipb-halle.de>
+	* R/elements.R: added Deuterium
+
+2008-08-11  sneumann  <sneumann@ipb-halle.de>
+
+	* R/elements.R (initializeCharges): added initializeCharges, which
+	can be useful for getMolecule("H3O+", elements=c(initializeCHNOPS(),initializeCharges()))
+	* R/Rdisop.R: fixed important bug which always initialised the
+	full PSE when supplying a special elements list
+
+2008-04-23  sneumann  <sneumann@ipb-halle.de>
+
+	* R/elements.R: fixed some masses/abundances,
+	                added more elements
+
+2008-02-15  sneumann  <sneumann@kons.ipb-sub.ipb-halle.de>
+
+	* R/elements.R (initializePSE): Fixed Mass of Na isotope
+
+2007-12-04  sneumann  <sneumann@ipb-halle.de>
+
+	* configure.win, src/Makevars.win, src/win/*: Fix Windows build
+
+2007-12-04  sneumann  <sneumann@ipb-halle.de>
+
+	* R/Rdisop.R, man/decomposeMass.Rd: added absolute mass deviation
+
+2007-10-29  begert  <begert@ipb-halle.de>
+
+	* R/elements.R: Fixed O mass
+
+2007-10-19  sneumann  <sneumann@ipb-halle.de>
+
+	* NAMESPACE: Re-enabled useDynLib(libims) to fix Linux Build
+
+2007-10-15  sneumann  <sneumann@ipb-halle.de>
+
+	* configure.win, src/Makevars.win: Fix Windows build
+
+2007-10-14  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* man: fixed some manpages
+
+2007-07-26  sneumann  <sneumann@ipb-halle.de>
+
+	* removed several get*Masses in favour of getMass
+	* polished vignette
+
+2007-07-11  sneumann  <sneumann@ipb-halle.de>
+
+	* R/elements.R, R/Rdisop.R: Formatting changes
+	* configure.in: disabled autogen for imslib
+
+2007-07-09  sneumann  <sneumann@ipb-halle.de>
+
+	* DESCRIPTION (Version): bumped Version following BioC scheme
+
+2007-07-03  sneumann  <sneumann@ipb-halle.de>
+
+	* src/disop.cpp: Clear error Message before running
+
+2007-06-14  sneumann  <sneumann@ipb-halle.de>
+
+	* R/Rdisop.R: removed CHNOPS warning message
+	* Windows: first Windows build
+
+2007-06-07  sneumann  <sneumann@ipb-halle.de>
+
+	* R/Rdisop.R (decomposeMass): fixed call
+
+2007-06-05  sneumann  <sneumann@ipb-halle.de>
+
+	* src/disop.cpp: Fixed stack imbalance for empty decompositions
+	* src/disop.cpp: improved Error Handling
+
+2007-05-25  sneumann  <sneumann@ipb-halle.de>
+
+	* R/elements.R: Added na, k, cl, br, f, i, fe, mg, ca
+
+	* R/Rdisop.R: moved isotope table to own file
+
+2007-05-15  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* Added addMolecule and subMolecule
+	to do arithmetics with adducts / fragments
+
+2007-05-04  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* configure.in: Re-Added local copy of IMS as fallback
+
+2007-04-30  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* R/zzz.R: removed unnecesary library.dynam()
+	which also caused problems on systems without libR.so
+	* src/ims/*: moved imslib sources into src/ subfolder
+	instead of using unchanged libims.a
+
+2007-03-23  Steffen Neumann  <sneumann@ipb-halle.de>
+
+	* src/disop.cpp: Removed decomposeMass(), this case is handled by
+	the R code.
+
